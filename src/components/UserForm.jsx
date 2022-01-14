@@ -37,23 +37,23 @@ const UserForm = (props) => {
 
     const handleLastName = (e) => {
         setLastName(e.target.value);
-        if(e.target.value.length <1){
+        if(e.target.value.length < 1){
             setLastNameError("Last name is required!");
-        } else if(e.target.value.length <3){
+        } else if(e.target.value.length < 3){
             setLastNameError("Last name must be at least 3 characters");
         }else{
-            setFirstNameError("");
+            setLastNameError("");
         }
     }
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
-        if(e.target.value.length<1){
+        if(e.target.value.length < 1){
             setEmailError("Email is required!");
-        } else if(e.target.value.length <6){
+        } else if(e.target.value.length < 6){
             setEmailError("Please enter a valid email");
         } else{
-            setFirstNameError("");
+            setEmailError("");
         }
     }
 
@@ -72,9 +72,9 @@ const UserForm = (props) => {
         setConfirm(e.target.value);
         if(e.target.value.length<1){
             setConfirmError("Confirm Password is required");
-        }else if(e.target.value.length <8){
+        }else if(e.target.value.length < 8){
             setConfirmError("Confirm Password must be at least 8 characters");
-        }else if(e.target.value != password){
+        }else if(e.target.value !== password){
             setConfirmError("Passwords must match");
         }else{
             setConfirmError("");
@@ -130,7 +130,7 @@ const UserForm = (props) => {
                     <p style={{color: 'red'}}>{confirmError}</p> : ''
                 }
             </div>
-            <input type="submit" value="Create User" />
+            <input type="submit" value="Create User!" />
         </form>
         <p>Form Data:</p>
         <p>First Name: {firstName}</p>
