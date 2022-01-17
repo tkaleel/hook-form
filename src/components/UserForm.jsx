@@ -23,7 +23,7 @@ const UserForm = (props) => {
         setPassword("");
         setConfirm("");
     };
-
+//SET STATE VARIABLE AND ERROR HANDLING
     const handleFirstName = (e) => {
         setFirstName(e.target.value);
         if(e.target.value.length < 1){
@@ -81,53 +81,53 @@ const UserForm = (props) => {
         }
 
     }
-
+//RETURN FOR RENDERING
     return (
         <div>
         <form onSubmit={createUser}>
             <div>
                 <label>First Name: </label>
                 <input type="text" onChange={handleFirstName} value={firstName} />
-                <p>&nbsp;</p>
+                
                 {
                     firstNameError ?
-                    <p style={{color:'red'}}>{firstNameError}</p> : ''
+                    <p style={{color:'red'}}>{firstNameError}</p> : <p>&nbsp;</p>
                 }
             </div>
             <div>
                 <label>Last Name: </label>
                 <input type="text" onChange={handleLastName} value={lastName} />
-                <p>&nbsp;</p>
+                
                 {
                     lastNameError ?
-                    <p style={{color: 'red'}}>{lastNameError}</p> : ''
+                    <p style={{color: 'red'}}>{lastNameError}</p> : <p>&nbsp;</p>
                 }
             </div>
             <div>
                 <label>Email Address: </label>
                 <input type="text" onChange={handleEmail} value={email} />
-                <p>&nbsp;</p>
+                
                 {
                     emailError ?
-                    <p style={{color: 'red'}}>{emailError}</p> : ''
+                    <p style={{color: 'red'}}>{emailError}</p> : <p>&nbsp;</p>
                 }
             </div>
             <div>
                 <label>Password: </label>
                 <input type="text" onChange={handlePassword} value={password} />
-                <p>&nbsp;</p>
+                
                 {
                     passwordError ?
-                    <p style={{color: 'red'}}>{passwordError}</p> : ''
+                    <p style={{color: 'red'}}>{passwordError}</p> : <p>&nbsp;</p>
                 }
             </div>
             <div>
                 <label>Confirm Password: </label>
                 <input type="text" onChange={handleConfirm} value={confirm} />
-                <p>&nbsp;</p>
+                
                 {
                     confirmError ?
-                    <p style={{color: 'red'}}>{confirmError}</p> : ''
+                    <p style={{color: 'red'}}>{confirmError}</p> : <p>&nbsp;</p>
                 }
             </div>
             <input type="submit" value="Create User!" />
@@ -140,7 +140,6 @@ const UserForm = (props) => {
         <p>Confirm Password: {confirm}</p>
 
         </div>
-        
     );
 };
 
